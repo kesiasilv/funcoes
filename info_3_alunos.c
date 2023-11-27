@@ -9,18 +9,20 @@
 struct Aluno {
 	char nome[N];
 	int idade;
-	float notas[3]; // Array para armazenar notas(por exemplo, 3 notas)
+	double notas[3]; // Array para armazenar notas(por exemplo, 3 notas)
 };
 
     typedef struct Aluno Aluno;
 
 
 void lerDadosAlunos(struct Aluno Aluno[3]){
-    for (int i = 0; i <3; i++)
+	int i, j;
+
+    for(i = 0; i <3; i++)
     {
     printf("==========================\n");
     printf("Digite o nome do aluno: ");
-	scanf("%s", Aluno[i].nome);
+	scanf("%50[^\n]s", Aluno[i].nome);
     fflush(stdin);
 
 	printf("Digite a idade do aluno: ");
@@ -28,33 +30,63 @@ void lerDadosAlunos(struct Aluno Aluno[3]){
     fflush(stdin);
 	
 	printf("Digite as 3 notas do aluno:\n");
-	for (int x = 0; x < 3; x++) {
-	printf("Nota %d: ", x + 1);
-	scanf("%f", &Aluno[i].notas[x]);
+	for (j = 0; j < 3; j++) {
+	printf("Nota %d: ", j + 1);
+	scanf("%lf", &Aluno[i].notas[j]);
     fflush(stdin);
     }
     }
 }
 
 void impriDadosAluno(struct Aluno Aluno[3]){
-    for(int i = 0; i<3; i++){
+	int i;
+	
+    for(i = 0; i<3; i++){
     printf("==========================\n");
     printf("\nInformacoes do Aluno:\n");
 	printf("Nome: %s\n", Aluno[i].nome);
 	printf("Idade: %d\n", Aluno[i].idade);
-
-    for(int x = 0; x<3; x++){
-        printf("Notas %d: %.2f\n", i + 1, Aluno[i].notas[x]);
+	
+	int j;
+  for (j = 0; j < 3; j++)
+        {
+            printf("Notas %d: %.2lf\n", j + 1, Aluno[i].notas[j]);
+        }
+        double soma = 0.0;
+        
+        for (j = 0; j < 5; j++)
+        {
+            soma+= Aluno[i].notas[j];
+        }
+        
+        double media;
+		media = soma / 3;
+        printf("Media: %.2lf\n", media);
+        
+        if (media >= 7)
+        {
+            printf("Aluno Aprovado\n");
+        }
+        else if ( media >=4 && media < 7)
+        {
+            printf("Aluno de recuperacao\n");
+        }
+        else if (media < 4)
+        {
+            printf("Aluno Reprovado\n");
+        }
+        
     }
-    printf("==========================\n");
-}
+        printf("=======================================\n");
+
+
 }
 
-int main() {
+int main(){
     Aluno dados[3];
 
     lerDadosAlunos(dados);
+    system("cls");
     impriDadosAluno(dados);
 
-return 0;
 }
