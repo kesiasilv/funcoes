@@ -17,5 +17,5 @@ void imprime(int m[][4], int n){
 int main(){
 	int mat[3][4] = {{1, 2, 3, 4}, {10, 20, 30, 40}, {91, 101, 111, 121}};
 				    
-	imprime(mat, 3);//precisa colocar o valor de n neste caso n vale 3
+	imprime(mat, 3);//precisa colocar o valor de n que é do primeiro vetor neste caso n vale 3
 }
