@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-/*prototipo de uma função, é usada caso a funcao
-fique depois do main, entao serve para chamar as 
+/*prototipo de uma função, é usada para a funcao que
+fica depois do main, serve para chamar as 
 funçoes que estão depois do main.
 sintaxe:
 <tipoo> <nome_da_funcao>(<parametro>);
