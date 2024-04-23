@@ -16,13 +16,11 @@ struct Aluno {
     void lerDadosAlunos(struct Aluno Aluno[3]);//prototipo da função
     void impriDadosAluno(struct Aluno Aluno[3]);//prototipo da função
     
-	int main(){
+int main(){
     Aluno dados[3];
-
     lerDadosAlunos(dados);
     system("cls");
     impriDadosAluno(dados);
-
 }
 
 void lerDadosAlunos(struct Aluno Aluno[3]){
