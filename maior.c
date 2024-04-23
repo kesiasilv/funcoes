@@ -2,7 +2,7 @@
 
 float maior(float num1, float num2){//declarei um nome para a funcao maior e escrevi os paramentros
 	if(num1 > num2){
-	 	return num1;
+	 	return num1;//return determina o fim da função
 	}else{
 		return num2;
 	}
